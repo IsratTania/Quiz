@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: 0px;
     padding: 0;
     font-family: "Scheherazade New", serif;
 }
@@ -19,23 +19,24 @@ body{
 
 }
 .img img{
-    width: 80%;
+    width: 60%;
 }
-.text{
+.text1{
     width: 90%;
     margin: auto;
 }
-.text h3{
+.text1 h3{
     margin-top: 20px;
 }
 .MyBtn{
     width: 100%;
-    margin-top: 0px;
+    margin-top: 32px;
+    padding: 8px;
     
    
 }
 .MyBtn button{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     background-color: tomato;
     border: none;
@@ -46,11 +47,20 @@ body{
     border-radius: 57px 0px 51px 0px;
     transition: 0.2s ease-in-out;
     margin-left: 189px !important;
+    margin-top: -8px;
     
 }
 .MyBtn button:hover{
     background-color: rgb(29, 194, 194);
 }
+
+.RulesBox.activeInfo{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+} 
+
 .RulesBox{
     width:320px;
     height: 580px;
@@ -61,6 +71,8 @@ body{
     box-shadow: rgb(0 0 0 /10%) 0px 10px 50px;
     transform: translate(-50%, -50%);
     border-radius: 48px;
+    opacity: 0;
+    pointer-events: none;
 }
 .RulesTitle{
     text-align: center;
@@ -70,7 +82,7 @@ body{
     padding: 5px;
 }
 .RulesList{
-    width: 80%;
+    width: 83%;
     margin: auto;
 }
 ol li {
@@ -104,6 +116,14 @@ ol li {
     background-color: rgb(29, 194, 194);
 }
 
+.Questions.activeQuiz{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+} 
+
+
 .Questions{
     width:320px;
     height: 580px;
@@ -114,6 +134,8 @@ ol li {
     box-shadow: rgb(0 0 0 /10%) 0px 10px 50px;
     transform: translate(-50%, -50%);
     border-radius: 48px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .QuestionsHeader{
