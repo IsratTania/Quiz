@@ -203,3 +203,26 @@ footer{
     justify-content: space-between;
     border-top: 1px solid lightgray;
 }
+
+.total_que{
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+footer button{
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 35px;
+    outline: none;
+    border: none;
+    border-radius: 57px 0px 51px 0px;
+    box-shadow: rgb(0 0 0 /10%) 0px 10px 50px;
+    background: tomato;
+    cursor: pointer;
+    color: #f1f1f1;
+    transition: all 0.3s ease;
+    margin-top: 11px;
+}
+footer .nextBtn:hover{
+    background-color: rgb(29, 194, 194);
+}
