@@ -45,4 +45,44 @@ function showQuestions(index){
     let total_queTag = '<p>' + questions[index].numb + ' Of 5 </p>';
     total_que.innerHTML=total_queTag;
 
+
+
+    const option = option_list.querySelectorAll(".options");
+    for(let i=0; i<option.length; i++){
+        option[i].setAttribute("onclick","optionSelected(this)");
+    }
+}
+
+
+let tickIcon ='<div class="tick icon"><i class="fas fa-check"></i></div>';
+let crossIcon ='<div class="cross icon"><i class="fas fa-times"></i></div>';
+
+
+function optionSelected(answer){
+    const option_list = document.querySelector (".MyOptions");
+    let userAns = answer.textContent;
+    let correctAns = questions[que_count].answer;
+    let allOptions = option_list.children.length;
+    if(userAns == correctAns){
+        answer.classList.add("correct");
+        console.log("Answer is correct");
+        answer.insertAdjacentHTML("beforeend",tickIcon);
+
+    }else {
+        answer.classList.add("incorrect");
+        console.log("Answer is Wrong");
+        answer.insertAdjacentHTML("beforeend",crossIcon);
+
+        for(let i=0; i<allOptions; i++){
+            if(option_list.children[i].textContent == correctAns){
+                option_list.children[i].setAttribute("class","options correct");
+                option_list.children[i].insertAdjacentHTML("beforeend",tickIcon);
+            }
+        }
+
+    }
+
+    for(let i=0; i<allOptions; i++){
+        option_list.children[i].classList.add("disabled");
+    }
 }
