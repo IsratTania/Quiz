@@ -244,6 +244,7 @@ footer button{
     color: #f1f1f1;
     transition: all 0.3s ease;
     margin-top: 11px;
+    display: none;
 }
 footer .nextBtn:hover{
     background-color: rgb(29, 194, 194);
@@ -262,4 +263,13 @@ footer .nextBtn:hover{
 
 .options.disabled{
     pointer-events: none;
+}
+
+.Questions header .time_lines{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+
+    background: #007bff;
 }

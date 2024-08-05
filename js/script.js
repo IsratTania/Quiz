@@ -3,10 +3,8 @@ const RulesBox = document.querySelector(".RulesBox")
 const ExitButton = document.querySelector(".Buttons .ExitButton");
 const ContinueButton = document.querySelector(".Buttons .ContinueButton");
 const Questions = document.querySelector(".Questions");
-
-
 const timeCount = document.querySelector(".TimeCount .Seconds");
-
+const timeLine = document.querySelector(".QuestionsHeader .time_lines")
 
 
 MyBtn.onclick = ()=>{
@@ -22,6 +20,7 @@ ContinueButton.onclick=()=>{
     Questions.classList.add("activeQuiz");
     showQuestions(0);
     startTimer(15);
+    startTimerLine(0);
 }
 
 
@@ -29,6 +28,8 @@ const nextBtn = document.querySelector(".nextBtn");
 let que_count=0;
 let counter;
 let timeValue=15;
+let counterLine;
+let widthValue = 0;
 
 
 nextBtn.onclick=()=>{
@@ -37,6 +38,10 @@ nextBtn.onclick=()=>{
         showQuestions(que_count);
         clearInterval(counter);
         startTimer(timeValue);
+
+        clearInterval(counterLine);
+        startTimerLine(widthValue);
+        nextBtn.style.display = "none";
     }
     else{
         console.log("You Have Completed Your Task ");
@@ -73,6 +78,7 @@ let crossIcon ='<div class="cross icon"><i class="fas fa-times"></i></div>';
 
 function optionSelected(answer){
     clearInterval(counter);
+    clearInterval(counterLine);
     const option_list = document.querySelector (".MyOptions");
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
@@ -99,6 +105,9 @@ function optionSelected(answer){
     for(let i=0; i<allOptions; i++){
         option_list.children[i].classList.add("disabled");
     }
+
+    nextBtn.style.display = "block";
+
 }
 
 
@@ -116,5 +125,17 @@ function startTimer(time){
         timeCount.textContent = "00";
     }
 
+    }
+}
+
+
+function startTimerLine(time){
+    counterLine = setInterval(timer, 50);
+    function timer(){
+        time +=1;
+        timeLine.style.width = time + "px";
+        if(time > 319){
+            clearInterval(counterLine);
+        }
     }
 }
