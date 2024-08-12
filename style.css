@@ -17,7 +17,7 @@ body{
     transform: translate(-50%, -50%);
     border-radius: 48px;
 
-    display: none;
+    /* display: none; */
 }
 .img img{
     width: 60%;
@@ -281,15 +281,18 @@ footer .nextBtn:hover{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    
     display: flex;
     background-color: #fff;
     border-radius: 45px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    
+    opacity: 0;
+    pointer-events: none;
     transition: all 0.3s ease;
-    opacity: 1;
 }
 
 .ResultImg img{
@@ -349,4 +352,11 @@ footer .nextBtn:hover{
 }
 .quit:hover{
     background-color: red;
+}
+
+.result_box.activeResult{
+    z-index: 5;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
 }

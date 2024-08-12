@@ -25,11 +25,17 @@ ContinueButton.onclick=()=>{
 
 
 const nextBtn = document.querySelector(".nextBtn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = document.querySelector(".buttons .restart1");
+const quit_quiz = document.querySelector(".buttons .quit");
+
 let que_count=0;
 let counter;
 let timeValue=15;
 let counterLine;
 let widthValue = 0;
+
+let userScore =0;
 
 
 nextBtn.onclick=()=>{
@@ -45,6 +51,7 @@ nextBtn.onclick=()=>{
     }
     else{
         console.log("You Have Completed Your Task ");
+        showResultBox();
     }
 }
 
@@ -83,7 +90,10 @@ function optionSelected(answer){
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
     let allOptions = option_list.children.length;
+
     if(userAns == correctAns){
+        userScore +=1;
+        console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is correct");
         answer.insertAdjacentHTML("beforeend",tickIcon);
@@ -109,6 +119,15 @@ function optionSelected(answer){
     nextBtn.style.display = "block";
 
 }
+
+
+function showResultBox(){
+    RulesBox.classList.remove("activeInfo");
+    Questions.classList.remove("activeQuiz");
+    result_box.classList.add("activeResult");
+    
+}
+
 
 
 function startTimer(time){
