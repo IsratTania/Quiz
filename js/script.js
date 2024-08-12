@@ -29,16 +29,45 @@ const result_box = document.querySelector(".result_box");
 const restart_quiz = document.querySelector(".buttons .restart1");
 const quit_quiz = document.querySelector(".buttons .quit");
 
+
+restart_quiz.onclick =()=>{
+    
+    result_box.classList.remove("activeResult");
+    Questions.classList.add("activeQuiz");
+    
+    let que_count=0;
+    let counter;
+    let timeValue=15;
+    let counterLine;
+    let widthValue = 0;
+    showQuestions(que_count);
+    clearInterval(counter);
+    startTimer(timeValue);
+
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    nextBtn.style.display = "none";
+    //optionSelected(answer);
+    //nextBtn(que_count);
+    //ContinueButton();
+   // window.location.reload();
+    
+}
+
+quit_quiz.onclick = () =>{
+    window.location.reload();
+}
+
 let que_count=0;
 let counter;
 let timeValue=15;
 let counterLine;
 let widthValue = 0;
-
 let userScore =0;
 
 
 nextBtn.onclick=()=>{
+    
     if(que_count < questions.length - 1 ){
         que_count++;
         showQuestions(que_count);
@@ -125,7 +154,20 @@ function showResultBox(){
     RulesBox.classList.remove("activeInfo");
     Questions.classList.remove("activeQuiz");
     result_box.classList.add("activeResult");
-    
+    const scoreText = document.querySelector(".score_text");
+    if(userScore >3 ){
+        let scoreTag = '<span> Congratulations You Got <p>'+ userScore +'</p> Out Of <p>'+ questions.length +'</p> </span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else if(userScore >1 ){
+        let scoreTag = '<span> Carry On You Got <p>'+ userScore +'</p> Out Of <p>'+ questions.length +'</p> </span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else {
+        let scoreTag = '<span> I Am Sorry You Got <p>'+ userScore +'</p> Out Of <p>'+ questions.length +'</p> </span>';
+        scoreText.innerHTML = scoreTag;
+    }
+
 }
 
 
