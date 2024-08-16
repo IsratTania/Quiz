@@ -21,6 +21,7 @@ body{
 }
 .img img{
     width: 60%;
+    padding-left: 20%;
 }
 .text1{
     width: 90%;
@@ -43,12 +44,12 @@ body{
     border: none;
     outline: none;
     columns: #fff;
-    padding: 6px 25px;
+    padding: 4.5px 24.5px;
     cursor: pointer;
     border-radius: 57px 0px 51px 0px;
     transition: 0.2s ease-in-out;
-    margin-left: 189px !important;
-    margin-top: -8px;
+    margin-left: 187px !important;
+    margin-top: -10px;
     
 }
 .MyBtn button:hover{
@@ -101,7 +102,7 @@ ol li {
     padding: 6px 25px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    margin-top: 19px;
+    margin-top: 30px;
 }
 .ExitButton{
     border-radius: 0px 47px 0px 46px;
@@ -244,7 +245,7 @@ footer button{
     cursor: pointer;
     color: #f1f1f1;
     transition: all 0.3s ease;
-    margin-top: 11px;
+    margin-top: 23px;
     display: none;
 }
 footer .nextBtn:hover{
@@ -276,7 +277,7 @@ footer .nextBtn:hover{
 }
 
 .result_box{
-    width: 320%;
+    width: 320px;
     height: 580px;
     position: absolute;
     top: 50%;
@@ -284,7 +285,7 @@ footer .nextBtn:hover{
     
     display: flex;
     background-color: #fff;
-    border-radius: 45px;
+    border-radius: 48px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
